@@ -1,0 +1,8 @@
+dispid,dispdesc
+1,"Routine (Home)"
+2,"Transfer to Short-term Hospital"
+5,"Transfer Other: Includes SNF, ICF, Another Type"
+6,"Home Health Care (HHC)"
+7,"Against Medical Advice (AMA)"
+20,"Died"
+99,"Discharge alive, destination unknown"

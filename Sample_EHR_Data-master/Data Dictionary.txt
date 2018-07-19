@@ -1,0 +1,82 @@
+Data Dictionary for the Sample EHR data.
+
+CLINICAL INFORMATION TABLES: 
+	Table: patient
+	Description: Contains all the patient demographic information
+	Columns: 
+		patientid (Primary Key) - Unique record of the patient
+		fname - Patient's first name
+		mname - Patient's middle initial
+		lname - Patient's last name
+		address - Street address of the patient's residence
+		city - Patient's city of residence
+		st - two letter abbreviation of the patient's state of residence
+		zip - Patient's zip code of residence
+		dob - Patient's birthdate
+		sex - Patient's sex code
+		raceid - Patient's race code
+
+	Table: encounter
+	Description: Contains all the encoutner (visit) information
+	Columns:
+		encounterid (Primary Key) - Unique Identifier of the encounter
+		hospid - Hospital identifier
+		adate - Date of admission	
+		los	- Length of stay
+		dispid - Discharge disposition code
+		patientid - Patient identification code		
+		asourceid - Source of admission code
+
+	Table: encounterdx
+	Description: Contains all the diagnosis codes for each encounter
+	Columns:
+		encounterid (Primary Key) - Identifier of the encounter
+		seq (Primary Key)- Sequence number of the diagnosis
+		dxcode - ICD-9 Diagnosis code	
+
+
+LOOKUP TABLES:
+
+	Table: lookupsex
+	Description: Lookup table with the descriptions of the patinet's sex
+	Columns: 
+			sex (Primary Key) - Code for each sex description
+			sexdesc - Full text description of the patients's sex
+
+	Table: lookuprace
+		Description: Lookup table with the descriptions of the patient's
+		Columns: 
+			raceid (Primary Key) - Code for each race description
+			racedesc - Full text description of the patient's race
+
+	Table: lookupstate
+		Description: Lookup table with the descriptions of the 50 states and DC
+		Columns: 
+			state (Primary Key) - Two letter abbreviation for each state 
+			statedesc - Full text of each state name
+
+	Table: lookuphospital
+		Description: Lookup table with information regarding the hospital
+		Columns: 
+			hospid (Primary Key) - Unique identifier ID for each hospital 
+			hosptialname - Full name of the hospital
+			st - Two letter abbreviation of the state name
+
+	Table: lookupadmitsource
+		Description: Lookup table with information regarding the source of the patient's admission
+		Columns:
+			asourceid (Primary Key) - unique identifier for the different kinds of sources of admission into the hospital
+			asourcedesc - Full text description of the source of admission
+
+	Table: lookupdisposition
+		Description: Lookup table with information regarding the discharge disposition
+		Columns:
+			dispid (Primary Key) - unique identifier for the different kinds of discharge dispositions
+			dispdesc - Full text description of the discharge dispositon
+
+	Table: lookupdiagnosis
+		Description: Lookup table with information regarding the hospital
+		Columns:
+			dxcode (Primary Key) - ICD-9-CM code for the diagnosis
+			longtitle - Long description of the diagnosis
+			shorttitle - Short description of the diagnosis
